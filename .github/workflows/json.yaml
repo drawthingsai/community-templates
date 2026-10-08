@@ -1,0 +1,37 @@
+name: json
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clean up json branch
+        run: |
+          git branch -D json || true
+          git checkout -b json
+          mkdir -p docs
+          # Each template is published as a zip of its folder's contents.
+          for template in templates/*/; do
+            (cd "$template" && zip -qrX "${GITHUB_WORKSPACE}/docs/$(basename "$template").zip" .)
+          done
+          echo "templates.drawthings.ai" > ./docs/CNAME
+
+      - name: Add and commit documentation
+        run: |
+          git config --global user.email "docbot@github.com"
+          git config --global user.name "docbot"
+          git add "docs/*" && git commit -m "Update docs."
+
+      - name: Push the new branch
+        run: |
+          git push --force origin json:json
