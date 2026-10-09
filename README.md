@@ -36,7 +36,7 @@ To contribute to a template, please follow these steps:
 
 ### Publishing
 
-On every push to `main`, a workflow zips the contents of each template folder and publishes the zips to [templates.drawthings.ai](https://templates.drawthings.ai) from the `json` branch, so `templates/File Organizer` is served as `File%20Organizer.zip`. Local Code downloads the zip of each idea left on and extracts it into the new project.
+On every push to `main`, a workflow zips the contents of each template folder and publishes the zips to [templates.drawthings.ai](https://templates.drawthings.ai) from the `json` branch, so `templates/File Organizer` is served as `File%20Organizer.zip`. It also publishes `templates.json`, the list of template names that Local Code offers under **Create from Template…**. Local Code downloads the zip of each idea left on and extracts it into the new project.
 
 ## Licensing
 

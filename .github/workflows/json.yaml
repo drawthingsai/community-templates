@@ -24,6 +24,8 @@ jobs:
           for template in templates/*/; do
             (cd "$template" && zip -qrX "${GITHUB_WORKSPACE}/docs/$(basename "$template").zip" .)
           done
+          # The index lists the published templates for the template picker in Local Code.
+          python3 -c 'import json, os; print(json.dumps([{"name": n} for n in sorted(os.listdir("templates")) if os.path.isdir(os.path.join("templates", n))], ensure_ascii=False))' > ./docs/templates.json
           echo "templates.drawthings.ai" > ./docs/CNAME
 
       - name: Add and commit documentation
