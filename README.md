@@ -32,6 +32,7 @@ To contribute to a template, please follow these steps:
  2. **Add an `AGENTS.md`**: Describe what the project is for and how the agent should work in it.
  3. **Add Supporting Files**: Optionally include scripts, examples, or other files the project should start with.
  4. **Add Project Skills**: Optionally put skills in `.agents/skills/<name>/SKILL.md`. Local Code discovers them for the project, and their scripts run from the project folder.
+ 5. **Add a Preview Video**: Optionally add `.template.json` with `{"preview": "preview.mp4"}` (a video in the template) or `{"preview": "https://..."}` (a hosted video). Local Code shows a Preview button in the project that plays it.
 
 ### Publishing
 
