@@ -31,6 +31,7 @@ To contribute to a template, please follow these steps:
  1. **Find or Create the Template Folder**: Use the English title of the project idea as the folder name under `./templates`.
  2. **Add an `AGENTS.md`**: Describe what the project is for and how the agent should work in it.
  3. **Add Supporting Files**: Optionally include scripts, examples, or other files the project should start with.
+ 4. **Add Project Skills**: Optionally put skills in `.agents/skills/<name>/SKILL.md`. Local Code discovers them for the project, and their scripts run from the project folder.
 
 ### Publishing
 
